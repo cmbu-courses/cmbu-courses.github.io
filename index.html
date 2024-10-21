@@ -25,6 +25,20 @@
         main {
             padding: 20px;
         }
+        .upload-section {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .upload-section a {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .upload-section a:hover {
+            background-color: #555;
+        }
         .search-container {
             text-align: center;
             margin-bottom: 20px;
@@ -81,20 +95,6 @@
             width: 100%;
             bottom: 0;
         }
-        .upload-section {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .upload-section a {
-            background-color: #333;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .upload-section a:hover {
-            background-color: #555;
-        }
     </style>
 </head>
 <body>
@@ -104,6 +104,13 @@
     </header>
 
     <main>
+        <!-- Upload PDF Section at the Top -->
+        <section class="upload-section">
+            <h2>Submit Your Own Course</h2>
+            <p>Have a course to share? Submit your PDF course using the form below:</p>
+            <a href="https://forms.gle/your-google-form-link-here" target="_blank">Submit PDF Course</a>
+        </section>
+
         <!-- Search Bar -->
         <div class="search-container">
             <input type="text" id="searchInput" placeholder="Search for courses..." onkeyup="filterCourses()">
@@ -116,13 +123,6 @@
                 <!-- JavaScript will load PDF links here -->
             </ul>
         </section>
-
-        <!-- Upload PDF Section -->
-        <section class="upload-section">
-            <h2>Submit Your Own Course</h2>
-            <p>Have a course to share? Submit your PDF course using the form below:</p>
-            <a href="https://forms.gle/your-google-form-link-here" target="_blank">Submit PDF Course</a>
-        </section>
     </main>
 
     <footer>
@@ -130,16 +130,16 @@
     </footer>
 
     <script>
-        // Mock for available PDF files - in a real setup, this would be fetched dynamically from the server.
+        // Simulated list of PDF files for demonstration (to be replaced with dynamic fetching if possible)
         const pdfFiles = [
-            "Advanced_HTML.pdf",
             "Beginner_Javascript.pdf",
+            "React_Development.pdf",
             "CSS_Basics.pdf",
-            "Python_Fundamentals.pdf",
-            "React_Development.pdf"
+            "Advanced_HTML.pdf",
+            "Python_Fundamentals.pdf"
         ];
 
-        // Sort the PDF files alphabetically
+        // Always display the PDF files in alphabetical order, regardless of their entry in the code
         pdfFiles.sort();
 
         const courseList = document.getElementById('courseList');
